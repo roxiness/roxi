@@ -1,6 +1,6 @@
 {
   "name": "roxi",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "The framework that gets your rocks off",
   "main": "lib/index.js",
   "bin": {

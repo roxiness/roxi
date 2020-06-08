@@ -7,7 +7,6 @@
     "roxi": "lib/interface/cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "roxi": "roxi"
   },
   "author": "jakobrosenberg@gmail.com",

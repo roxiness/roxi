@@ -1,0 +1,2 @@
+Root layout
+<slot></slot>

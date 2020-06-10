@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "The framework that gets your rocks off",
   "main": "lib/index.js",
-  "bin": "lib/interface/cli.js",
+  "bin": "lib/cli.js",
   "scripts": {
     "roxi": "roxi"
   },

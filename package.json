@@ -15,11 +15,14 @@
     "@rollup/plugin-replace": "^2.3.2",
     "@snowpack/app-scripts-svelte": "^1.1.4",
     "@sveltech/routify": "^1.8.0-beta.23",
+    "adm-zip": "^0.4.14",
+    "axios": "^0.19.2",
     "cfonts": "^2.8.2",
     "cli-progress": "^3.8.2",
     "commander": "^5.1.0",
     "del": "^5.1.0",
     "enquirer": "^2.3.5",
+    "fs-extra": "^9.0.1",
     "nollup": "^0.11.1",
     "rollup": "^2.13.1",
     "rollup-plugin-copy": "^3.3.0",
@@ -35,6 +38,7 @@
     "svelte": "^3.23.0"
   },
   "devDependencies": {
-    "execa": "^4.0.2"
+    "execa": "^4.0.2",
+    "typescript": "^3.9.5"
   }
 }

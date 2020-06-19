@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "roxi": "file:../"
+    "roxi": "^1.0.4"
   }
 }

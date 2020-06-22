@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "roxi": "^1.0.4"
+    "roxi": "workspace:^1.0.4"
   }
 }

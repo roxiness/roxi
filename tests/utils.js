@@ -1,7 +1,7 @@
 const { copySync, ensureDirSync, emptyDirSync } = require('fs-extra')
 const { resolve } = require('path')
 
-const buildPath = '.temp'
+const buildPath = 'temp'
 
 
 function buildATest() {

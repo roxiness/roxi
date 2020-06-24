@@ -1,11 +1,4 @@
-import { hmr } from 'roxi/routify'
-import App from './App.svelte';
-
-console.log('hmr', hmr)
-
-const app = hmr(App, { target: document.body }, 'routify-app')
-
-
+self.__ROXI
 
 
 // if ('serviceWorker' in navigator) {

@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mdsvex": "^0.8.2",
     "roxi": "workspace:^1.0.4"
   }
 }

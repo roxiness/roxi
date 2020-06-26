@@ -21,6 +21,7 @@
     "commander": "^5.1.0",
     "del": "^5.1.0",
     "enquirer": "^2.3.5",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "fs-extra": "^9.0.1",
     "nollup": "PepsRyuu/nollup#Refactor",

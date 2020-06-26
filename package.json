@@ -37,12 +37,12 @@
     "signale": "^1.4.0",
     "snowpack": "^2.5.2",
     "spassr": "^1.1.2",
-    "terminal-link": "^2.1.1"
+    "terminal-link": "^2.1.1",
+    "svelte": "^3.23.2"
   },
   "devDependencies": {
     "execa": "^4.0.2",
     "rollup-plugin-svelte": "^5.2.3",
-    "svelte": "^3.23.2",
     "typescript": "^3.9.5"
   }
 }

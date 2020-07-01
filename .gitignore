@@ -2,4 +2,4 @@ node_modules
 .history
 **/.routify/**
 **/.temp
-tests/temp
+__tests__/temp

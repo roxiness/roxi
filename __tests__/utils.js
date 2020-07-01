@@ -4,7 +4,7 @@ const { resolve } = require('path')
 const buildPath = 'temp'
 
 
-function buildATest() {
+function copyATest() {
   const guid = (Date.now() + (Math.random() * 10e5)).toString(36)
   const from = resolve(__dirname, '..', 'example')
   const path = resolve(__dirname, buildPath, 'example-' + guid)
@@ -14,7 +14,7 @@ function buildATest() {
 }
 
 function clearTemp() {
-  emptyDirSync(buildPath)
+  emptyDirSync(resolve(__dirname, buildPath))
 }
 
-module.exports = { buildATest, clearTemp }
+module.exports = { copyATest, clearTemp }

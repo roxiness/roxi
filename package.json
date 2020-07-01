@@ -38,7 +38,7 @@
     "rollup-plugin-workbox": "^5.0.1",
     "signale": "^1.4.0",
     "snowpack": "^2.5.2",
-    "spassr": "^1.1.2",
+    "spassr": "workspace:^1.1.2",
     "svelte": "^3.23.2",
     "terminal-link": "^2.1.1"
   },

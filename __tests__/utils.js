@@ -1,20 +1,30 @@
-const { copySync, ensureDirSync, emptyDirSync } = require('fs-extra')
+const { copySync, ensureDirSync, emptyDirSync, existsSync } = require('fs-extra')
 const { resolve } = require('path')
+module.exports = { copyATest, waitForServer }
 
-const buildPath = 'temp'
+const buildPath = resolve(__dirname, 'temp')
 
+if (!process.env.reuse_build)
+  emptyDirSync(resolve(buildPath))
+ensureDirSync(buildPath)
 
-function copyATest() {
-  const guid = (Date.now() + (Math.random() * 10e5)).toString(36)
+function copyATest(tag) {
   const from = resolve(__dirname, '..', 'example')
-  const path = resolve(__dirname, buildPath, 'example-' + guid)
-  ensureDirSync(buildPath)
+  const path = resolve(buildPath, 'example-' + tag)
+  const exists = existsSync(path)
   copySync(from, path, { filter: file => !file.match(/example.node_modules/) })
-  return { path }
+  return { pat, exists }
 }
 
-function clearTemp() {
-  emptyDirSync(resolve(__dirname, buildPath))
+async function waitForServer(page, url, timeout = 20000) {
+  const startTime = Date.now()
+  while (Date.now() - startTime < timeout) {
+    try {
+      const response = await page.goto(url)
+      if (response.ok())
+        return response
+      await new Promise(resolve => setTimeout(resolve, 100))
+    } catch (err) { }
+  }
+  throw new Error('Server never started')
 }
-
-module.exports = { copyATest, clearTemp }

@@ -13,8 +13,9 @@ function copyATest(tag) {
   const path = resolve(buildPath, 'example-' + tag)
   const exists = existsSync(path)
   copySync(from, path, { filter: file => !file.match(/example.node_modules/) })
-  return { pat, exists }
+  return { path, exists }
 }
+
 
 async function waitForServer(page, url, timeout = 20000) {
   const startTime = Date.now()

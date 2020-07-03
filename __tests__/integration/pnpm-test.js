@@ -47,7 +47,15 @@ describe('pnpm', () => {
     appendFileSync(filePath, `\n<div>${stamp}</div>`)
     const result2 = await page.waitForSelector(`"${stamp}"`);
     expect(result2).toBeTruthy()
+  })
 
+  it('can build and serve', async () => {
+    execFileSync('pnpm run build', { cwd: path, shell: true, stdio: 'inherit' })
+    const handle = spawn('pnpm', ['run', 'serve', '--', '--spa-port', '5001'], { cwd: path, shell: true, stdio: 'inherit' })
+    await page.goto('http://localhost:5005/')
+    const result = await page.$(`"Example app"`);
+    expect(result).toBeTruthy()
+    kill(handle.pid)
   })
 })
 

@@ -12,7 +12,7 @@ function copyATest(tag) {
   const from = resolve(__dirname, '..', 'example')
   const path = resolve(buildPath, 'example-' + tag)
   const exists = existsSync(path)
-  copySync(from, path, { filter: file => !file.match(/example.node_modules/) })
+  copySync(from, path, { filter: file => !file.match(/example.node_modules|example.dist/) })
   return { path, exists }
 }
 

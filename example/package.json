@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "roxi dev",
     "build": "roxi build",
+    "serve": "roxi serve",
     "run-install": "roxi install",
     "test": "roxi test"
   },

@@ -3,3 +3,4 @@ node_modules
 **/.routify/**
 **/.temp
 __tests__/temp
+**/dist/

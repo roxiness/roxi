@@ -2,7 +2,6 @@
   "name": "roxi",
   "version": "1.0.4",
   "description": "The framework that gets your rocks off",
-  "main": "lib/index.js",
   "bin": "lib/cli.js",
   "scripts": {
     "roxi": "roxi",
@@ -41,7 +40,11 @@
     "snowpack": "^2.5.2",
     "spassr": "workspace:^1.1.2",
     "svelte": "^3.23.2",
-    "terminal-link": "^2.1.1"
+    "svelte-hmr": "^0.9.0",
+    "svite": "latest",
+    "terminal-link": "^2.1.1",
+    "vite": "^1.0.0-beta.11",
+    "yaml": "^1.10.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",

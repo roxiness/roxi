@@ -13,3 +13,9 @@
 # - vite: no-bundler with fast cold builds and rebuilds. Uses koa middleware.
 bundler: nollup
 
+########### PACKAGE MANAGER ###########
+# handles plugin dependencies
+package-manager: npm
+
+plugins:
+ - postcss

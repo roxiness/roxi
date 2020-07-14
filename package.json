@@ -15,6 +15,7 @@
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@rollup/plugin-replace": "^2.3.3",
     "@types/jest": "^26.0.3",
+    "@sveltech/routify": "latest",
     "adm-zip": "^0.4.14",
     "axios": "^0.19.2",
     "cfonts": "^2.8.5",

@@ -14,8 +14,8 @@
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@rollup/plugin-replace": "^2.3.3",
-    "@types/jest": "^26.0.3",
     "@sveltech/routify": "latest",
+    "@types/jest": "^26.0.3",
     "adm-zip": "^0.4.14",
     "axios": "^0.19.2",
     "cfonts": "^2.8.5",
@@ -41,10 +41,10 @@
     "spassr": "^1.1.2",
     "svelte": "^3.23.2",
     "svelte-hmr": "^0.9.0",
-    "svite": "^0.2.3",
+    "svite": "^0.3.1",
     "terminal-link": "^2.1.1",
     "tree-kill": "^1.2.2",
-    "vite": "^1.0.0-rc.1",
+    "vite": "1.0.0-rc.3",
     "yaml": "^1.10.0"
   },
   "devDependencies": {

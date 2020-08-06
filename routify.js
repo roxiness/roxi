@@ -1,2 +1,2 @@
-export * from '@sveltech/routify/runtime'
-export { default as hmr } from '@sveltech/routify/hmr'
+export * from '@roxi/routify/runtime'
+export { default as hmr } from '@roxi/routify/hmr'

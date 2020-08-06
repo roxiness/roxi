@@ -11,11 +11,12 @@
 # - rollup: basic bundler which writes output to dist. Useful for live testing SSR.
 # - nollup: uses rollup under the hood, but rebuilds are much faster. Uses rollup for build.
 # - vite: no-bundler with fast cold builds and rebuilds. Uses koa middleware.
-bundler: nollup
+bundler: vite
 
 ########### PACKAGE MANAGER ###########
 # handles plugin dependencies
 package-manager: npm
 
 plugins:
- - postcss
+ - roxi-plugin-mdsvex
+#  - roxi-plugin-postcss

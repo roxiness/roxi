@@ -13,7 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mdsvex": "^0.8.2",
-    "roxi": "workspace:^1.0.4"
+    "roxi": "workspace:^1.0.4",
+    "roxi-plugin-mdsvex": "workspace:^1.0.0",
+    "roxi-plugin-postcss": "workspace:^1.0.0"    
+  },
+  "@dependencies": {
   }
 }

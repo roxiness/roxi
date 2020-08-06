@@ -48,6 +48,7 @@ article aside {
 
 body {
     background: var(--color-bg);
+    /* background: red; */
     color: var(--color-text);
     font-family: var(--font-family);
     line-height: var(--line-height);

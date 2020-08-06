@@ -1,1 +1,5 @@
-INDEX2
+
+<!-- routify:options index=100 -->
+<div>
+    INDEX
+</div>

@@ -8,11 +8,12 @@ if (!process.env.reuse_build)
   emptyDirSync(resolve(buildPath))
 ensureDirSync(buildPath)
 
-function copyATest(tag) {
-  const from = resolve(__dirname, '..', 'example')
-  const path = resolve(buildPath, 'example-' + tag)
+function copyATest(name = 'basic', tag) {
+  const from = resolve(__dirname, '..', 'examples', name)
+  const path = resolve(buildPath, `${name}-` + tag)
   const exists = existsSync(path)
-  copySync(from, path, { filter: file => !file.match(/example.node_modules|example.dist/) })
+  console.log('from', from)
+  copySync(from, path, { filter: file => !file.match(/\/node_modules|\/dist/) })
   return { path, exists }
 }
 
@@ -28,4 +29,8 @@ async function waitForServer(page, url, timeout = 20000) {
     } catch (err) { }
   }
   throw new Error('Server never started')
+}
+
+function setBundler(){
+
 }

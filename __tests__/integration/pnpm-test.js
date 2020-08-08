@@ -6,7 +6,7 @@ const { resolve } = require('path')
 const { appendFileSync } = require('fs-extra')
 require('jest-playwright-preset')
 
-const { path, exists } = copyATest('pnpm')
+const { path, exists } = copyATest('basic', 'pnpm')
 const { chromium } = require('playwright');
 let url = 'http://localhost:5000'
 let devProcess

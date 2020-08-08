@@ -18,5 +18,5 @@ bundler: vite
 package-manager: npm
 
 plugins:
- - roxi-plugin-mdsvex
- - roxi-plugin-postcss
+ - "@roxi/plugin-mdsvex"
+ - "@roxi/plugin-postcss"

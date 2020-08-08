@@ -33,7 +33,7 @@ function lifecycleTest({ bundler, pkgm, port }) {
   }, 60000)
 
   it('can start dev server', async () => {
-    devProcess = spawn('pnpm', ['run', 'dev'], { cwd: path, shell: true, stdio: 'inherit' })
+    devProcess = spawn('pnpm', ['run', 'dev', '--', '--port', port], { cwd: path, shell: true, stdio: 'inherit' })
     const response = await waitForServer(page, url)
     expect(response.ok()).toBeTruthy()
   })

@@ -1,6 +1,6 @@
 {
   "name": "roxi",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "The framework that gets your rocks off",
   "bin": "lib/cli.js",
   "scripts": {
@@ -40,10 +40,10 @@
     "spassr": "^1.1.2",
     "svelte": "^3.23.2",
     "svelte-hmr": "^0.9.0",
-    "svite": "^0.3.1",
+    "svite": "^0.5.0-beta.0",
     "terminal-link": "^2.1.1",
     "tree-kill": "^1.2.2",
-    "vite": "1.0.0-rc.3",
+    "vite": "1.0.0-rc.4",
     "yaml": "^1.10.0"
   },
   "devDependencies": {

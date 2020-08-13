@@ -14,7 +14,7 @@
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@rollup/plugin-replace": "^2.3.3",
-    "@roxi/routify": "workspace:2.0.0-next-major",
+    "@roxi/routify": "^2.0.0-next-major",
     "@types/jest": "^26.0.3",
     "adm-zip": "^0.4.14",
     "axios": "^0.19.2",

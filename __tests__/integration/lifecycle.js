@@ -1,10 +1,8 @@
 
 
 function lifecycleTest({ bundler, pkgm, port }) {
-  const spaPort = port + 1
   const ssrPort = port + 2
   const url = `http://localhost:${port}/`
-  const spaUrl = `http://localhost:${spaPort}/`
   const ssrUrl = `http://localhost:${ssrPort}/`
 
   const { copyATest, waitForServer } = require('../utils')
@@ -14,7 +12,8 @@ function lifecycleTest({ bundler, pkgm, port }) {
   const { appendFileSync } = require('fs-extra')
   require('jest-playwright-preset')
 
-  const { path, exists } = copyATest('basic', 'pnpm')
+  // copy test
+  const { path, exists } = copyATest('basic', pkgm)
   const { chromium } = require('playwright');
 
   let devProcess
@@ -28,8 +27,10 @@ function lifecycleTest({ bundler, pkgm, port }) {
 
 
   itIf(!exists)('can install example', async () => {
-    execFileSync('pnpm install', { cwd: path, shell: true, stdio: 'inherit' })
-    // execFileSync('pnpm install roxi', { cwd: path, shell: true, stdio: 'inherit' })
+    if (pkgm === 'pnpm')
+      execFileSync('pnpm install .', { cwd: path, shell: true, stdio: 'inherit' })
+    else if (pkgm === 'npm')
+      execFileSync('pnpm install', { cwd: path, shell: true, stdio: 'inherit' })
   }, 60000)
 
   it('can start dev server', async () => {
@@ -56,7 +57,7 @@ function lifecycleTest({ bundler, pkgm, port }) {
 
   it('can build and serve', async () => {
     execFileSync('pnpm run build', { cwd: path, shell: true, stdio: 'inherit' })
-    const handle = spawn('pnpm', ['run', 'serve', '--', '--spa-port', spaPort, '--ssr-port', ssrPort ], { cwd: path, shell: true, stdio: 'inherit' })
+    const handle = spawn('pnpm', ['run', 'serve', '--', '--spa-port', spaPort, '--ssr-port', ssrPort], { cwd: path, shell: true, stdio: 'inherit' })
     await page.goto(ssrUrl)
     expect(await page.$(`"Example app"`)).toBeTruthy()
     kill(handle.pid)

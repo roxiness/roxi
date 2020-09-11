@@ -11,7 +11,7 @@
 # - rollup: basic bundler which writes output to dist. Useful for live testing SSR.
 # - nollup: uses rollup under the hood, but rebuilds are much faster. Uses rollup for build.
 # - vite: no-bundler with fast cold builds and rebuilds. Uses koa middleware.
-bundler: vite
+bundler: rollup
 
 ########### PACKAGE MANAGER ###########
 # handles plugin dependencies

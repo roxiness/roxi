@@ -1,25 +1,29 @@
-#   ____                   _    
-#  |  _ \    ___   __  __ (_)   
-#  | |_) |  / _ \  \ \/ / | |   
-#  |  _ <  | (_) |  >  <  | |   
-#  |_| \_\  \___/  /_/\_\ |_|   
+#   ____                   _
+#  |  _ \    ___   __  __ (_)
+#  | |_) |  / _ \  \ \/ / | |
+#  |  _ <  | (_) |  >  <  | |
+#  |_| \_\  \___/  /_/\_\ |_|
 #         C O N F I G
 #
 
-############### BUNDLER ###############
-# used for dev and build commands. 
-# - rollup: basic bundler which writes output to dist. Useful for live testing SSR.
-# - nollup: uses rollup under the hood, but rebuilds are much faster. Uses rollup for build.
-# - vite: no-bundler with fast cold builds and rebuilds. Uses koa middleware.
-bundler: rollup
+log-level: debug
+port: 4000
 
 ########### PACKAGE MANAGER ###########
 # handles plugin dependencies
 package-manager: pnpm
 
 plugins:
-- "@roxi/plugin-mdsvex":
-    extensions:
-    - .md
-    - .svx
-- "@roxi/plugin-postcss"
+  - routify:
+  - rollup:
+      prod: true
+      dev: false
+      # port: 3000
+  - '@roxi/plugin-mdsvex':
+      extensions:
+        - .md
+        - .svx
+  - '@roxi/plugin-postcss'
+  - vite:
+  - nollup:
+      port: 3100

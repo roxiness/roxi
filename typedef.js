@@ -1,3 +1,3 @@
 /**
- *  @typedef {import('./lib/shared/context').RoxiContext} RoxiContext
+ *  @typedef {import('./lib/app').RoxiApp} RoxiApp
  * */

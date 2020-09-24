@@ -16,9 +16,7 @@ package-manager: pnpm
 plugins:
   - routify:
   - rollup:
-      prod: true
-      dev: false
-      # port: 3000
+      dev: true
   - '@roxi/plugin-mdsvex':
       extensions:
         - .md

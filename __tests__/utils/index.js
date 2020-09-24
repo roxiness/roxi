@@ -1,7 +1,6 @@
 const { copySync, ensureDirSync, emptyDirSync, readFileSync, readdirSync, statSync, writeFileSync, existsSync, removeSync } = require('fs-extra')
 const { execFileSync } = require('child_process')
 const { resolve } = require('path')
-const { hashElement } = require('folder-hash')
 module.exports = { appFactory, waitForServer, clearCache }
 
 const buildPath = resolve(__dirname, '..', 'temp', 'build')

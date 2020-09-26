@@ -4,3 +4,4 @@ node_modules
 **/.temp
 __tests__/temp
 **/dist/
+examples/**/build

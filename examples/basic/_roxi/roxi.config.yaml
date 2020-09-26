@@ -25,3 +25,8 @@ plugins:
   - vite:
   - nollup:
       port: 3100
+  - spassr:
+      port: 5000
+  - spassr:
+      port: 5005
+      ssr: true

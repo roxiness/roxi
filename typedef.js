@@ -1,5 +1,5 @@
 /**
- * @typedef {'start'|'before:config'|'config'
+ * @typedef {'*'|'init'|'start'|'before:config'|'config'
  * |'after:config'|'before:bundle'|'bundle'
  * |'after:bundle'|'router'|'end'} AppEvent
  *
@@ -9,14 +9,14 @@
  * @prop {Object.<string, Function>=} dependencies
  *
  * @typedef {object} RoxiPluginHook
- * @prop {string} event
+ * @prop {AppEvent} event
  * @prop {RoxiPluginHookFunction|string=} condition
  * @prop {RoxiPluginHookFunction} action
  *
  * @callback RoxiPluginHookFunction
  * @param {RoxiApp} app
- * @param {object} params
- * @param {object} ctx
+ * @param {Object.<string, any>} params
+ * @param {Object.<string, any>} ctx
  *
  * @typedef {object} RoxiPluginConfig
  * @prop {string} name
@@ -24,6 +24,20 @@
  *
  * @typedef {RoxiPlugin & RoxiPluginConfig} RoxiPluginConfigured
  *
- * @typedef {createApp['app']} RoxiApp
- */
+ * @typedef {import('./lib/app.js')['App']['prototype']} RoxiAppInstance *
+ * @typedef {RoxiAppInstance & {config: Partial<RoxiAppConfig>}} RoxiApp
+ *
+ * @typedef {object} RoxiAppConfig
+ * @prop {import('./lib/plugins/rollup/rollup.template').default['template']['rollup']} rollup
+ * @prop {import('./lib/plugins/routify')['template']['routify']} routify
+ * @prop {import('./lib/roxi')['template']['roxi']} roxi
+ * @prop {import('./lib/plugins/vite')['template']['svite']} svite
+ * @prop {import('./lib/plugins/vite')['template']['vite']} vite
+ * @prop {import('./lib/plugins/spassr')['template']} spassr
+ *
+ **/
 
+/** @type {RoxiApp} */
+let ra
+
+ra.config.rollup.compileConfig

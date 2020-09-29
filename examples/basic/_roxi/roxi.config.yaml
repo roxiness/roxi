@@ -14,6 +14,8 @@ port: 4000
 package-manager: pnpm
 
 plugins:
+  - _roxi/custom.plugin.js:
+      foo: 'bar'
   - routify:
   - rollup:
       dev: true

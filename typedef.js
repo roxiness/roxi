@@ -10,6 +10,7 @@
  *
  * @typedef {object} RoxiPluginHook
  * @prop {AppEvent} event
+ * @prop {string=} name
  * @prop {RoxiPluginHookFunction|string=} condition
  * @prop {RoxiPluginHookFunction} action
  *

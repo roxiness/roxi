@@ -29,7 +29,7 @@
     "express": "^4.17.1",
     "fs-extra": "^9.0.1",
     "node-html-parser": "^1.2.20",
-    "nollup": "jakobrosenberg/nollup#patch-1",
+    "nollup": "^0.13.11",
     "ora": "^4.0.4",
     "rollup": "^2.28.2",
     "rollup-plugin-hot": "0.0.31",

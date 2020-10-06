@@ -39,6 +39,3 @@
  **/
 
 /** @type {RoxiApp} */
-let ra
-
-ra.config.rollup.compileConfig

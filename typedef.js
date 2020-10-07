@@ -25,7 +25,7 @@
  *
  * @typedef {RoxiPlugin & RoxiPluginConfig} RoxiPluginConfigured
  *
- * @typedef {import('./lib/app.js')['App']['prototype']} RoxiAppInstance *
+ * @typedef {import('./lib/app.js')['App']['prototype']} RoxiAppInstance
  * @typedef {RoxiAppInstance & {config: Partial<RoxiAppConfig>}} RoxiApp
  *
  * @typedef {object} RoxiAppConfig
@@ -37,5 +37,3 @@
  * @prop {import('./lib/plugins/spassr')['template']} spassr
  *
  **/
-
-/** @type {RoxiApp} */

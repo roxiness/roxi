@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {    
+    "esModuleInterop": true,
+    "declaration": true,
+    "allowJs": true,
+    "emitDeclarationOnly": true,
+    "outFile": "index.d.ts"
+  },
+  "include": ["roxi.js"],
+  "exclude": ["node_modules"],
+}

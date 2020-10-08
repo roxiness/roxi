@@ -5,3 +5,4 @@ node_modules
 __tests__/temp
 **/dist/
 examples/**/build
+examples/**/dump.json

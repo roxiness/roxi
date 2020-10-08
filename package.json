@@ -1,6 +1,6 @@
 {
   "name": "roxi",
-  "version": "1.1.3",
+  "version": "1.3.0",
   "description": "The framework that gets your rocks off",
   "bin": "lib/cli.js",
   "main": "roxi.js",

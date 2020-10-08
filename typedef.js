@@ -4,7 +4,7 @@
  * |'after:bundle'|'router'|'end'} AppEvent
  *
  * @typedef {object} RoxiPlugin
- * @prop {string} name
+ * @prop {string=} name
  * @prop {RoxiPluginHook[]} hooks
  * @prop {Object.<string, Function>=} dependencies
  *
@@ -17,7 +17,7 @@
  * @callback RoxiPluginHookFunction
  * @param {RoxiApp} app
  * @param {Object.<string, any>} params
- * @param {Object.<string, any>} ctx
+ * @param {{event: AppEvent} & Object.<string, any>} ctx
  *
  * @typedef {object} RoxiPluginConfig
  * @prop {string} name
@@ -36,4 +36,15 @@
  * @prop {import('./lib/plugins/vite')['template']['vite']} vite
  * @prop {import('./lib/plugins/spassr')['template']} spassr
  *
+ * @callback ErrorHandler
+ * @param {Error} error
+ * @param {RoxiApp} app
+ * @returns {any}
+ *
+ * @callback HookHandler
+ * @param {RoxiApp} app
+ * @param {RoxiPluginHook} hook
+ * @param {RoxiPlugin} plugin
+ * @param {object} ctx
+ * @returns {Promise}
  **/

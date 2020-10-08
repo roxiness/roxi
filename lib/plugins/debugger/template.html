@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/jsondiffpatch/dist/jsondiffpatch.umd.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jsondiffpatch@0.3.8/dist/formatters-styles/html.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jsondiffpatch@0.3.8/dist/formatters-styles/annotated.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div id="visual"></div>
+    <hr />
+    <div id="annotated"></div>
+    <script>
+      import('./delta.json')
+      var left = __LEFT__
+      var right = __RIGHT__
+      var delta = jsondiffpatch
+        .create({
+          objectHash: function (obj, index) {
+            // try to find an id property, otherwise just use the index in the array
+            return obj.name || obj.id || obj._id || '$$index:' + index
+          },
+        })
+        .diff(left, right)
+
+      // beautiful html diff
+      document.getElementById(
+        'visual',
+      ).innerHTML = jsondiffpatch.formatters.html.format(delta, left)
+      jsondiffpatch.formatters.html.hideUnchanged()
+    </script>
+  </body>
+</html>

@@ -16,15 +16,9 @@ package-manager: pnpm
 plugins:
   - _roxi/custom.plugin.js:
       foo: 'bar'
+  - svelte:
   - routify:
   - rollup:
-      dev: true
-  - '@roxi/plugin-mdsvex':
-      extensions:
-        - .md
-        - .svx
-  - '@roxi/plugin-postcss'
-  - vite:
   - nollup:
       port: 3200
   - spassr:
@@ -32,3 +26,7 @@ plugins:
   - spassr:
       port: 3400
       ssr: true
+  - postcss:
+  - mdsvex:
+  - vite:
+  - debugger:

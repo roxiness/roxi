@@ -2,7 +2,6 @@
 
 /** @type {RoxiPlugin} */
 module.exports.default = {
-  name: 'custom.plugin',
   hooks: [
     {
       event: 'config',

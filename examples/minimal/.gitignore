@@ -1,0 +1,6 @@
+node_modules
+.history
+**/.routify/**
+dist
+public/build
+_roxi/.roxi/logs/**

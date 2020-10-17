@@ -26,7 +26,7 @@ plugins:
   - spassr:
       port: 3400
       ssr: true
-  - postcss:
   - mdsvex:
+  - postcss:
   - vite:
   - debugger:

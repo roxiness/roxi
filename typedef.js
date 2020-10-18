@@ -3,6 +3,12 @@
  * |'after:config'|'before:bundle'|'bundle'
  * |'after:bundle'|'router'|'end'} AppEvent
  *
+ * @typedef {object} HookOrder
+ * @prop {string=} before
+ * @prop {string=} after
+ * @prop {boolean=} first
+ * @prop {boolean=} last
+ *
  * @typedef {object} RoxiPlugin
  * @prop {string=} name
  * @prop {RoxiPluginHook[]} hooks
@@ -12,6 +18,7 @@
  * @prop {AppEvent} event
  * @prop {string=} name
  * @prop {RoxiPluginHookFunction|string=} condition
+ * @prop {HookOrder|HookOrder[]=} order
  * @prop {RoxiPluginHookFunction} action
  *
  * @callback RoxiPluginHookFunction

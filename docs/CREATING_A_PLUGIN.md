@@ -49,3 +49,34 @@ export default {
   ],
 }
 ```
+
+## Examples
+
+#### Adding Rollup plugin
+
+```javascript
+import alias from '@rollup/plugin-alias'
+
+export default {
+  hooks: [
+    {
+      event: 'config',
+      action: (app, params, ctx) => {
+        const rollup = {
+          plugins$map: { alias },
+          plugins$options: {
+            alias: {
+              entries: [
+                { find: 'utils', replacement: '../../../utils' },
+                { find: 'batman-1.0.0', replacement: './joker-1.5.0' },
+              ],
+            },
+          },
+        }
+
+        app.merge({ config: { rollup } })
+      },
+    },
+  ],
+}
+```

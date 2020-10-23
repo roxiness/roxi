@@ -31,6 +31,8 @@ export default {
 
 #### Merging config
 
+Merging configs, recursively assigns object & array entries to the app object.
+
 ```javascript
 export default {
   hooks: [
@@ -50,9 +52,58 @@ export default {
 }
 ```
 
+#### Shared config
+Shared configs are configs where parsing has been delayed till the bundle event. The parser is added to `<config>$map` and the options to `<config>$options`.
+
+Using a shared config provides access to the same set of options across multiple plugins.
+
+```javascript
+export default {
+  hooks: [
+    {
+      event: 'config',
+      action: (app, params, ctx) => {
+        app.merge({
+          config: {
+            rollup: {
+              plugins$map: { terser },
+              plugins$options: { terser: { /** terser options */ } }
+            }
+          }
+        })
+      }
+    }
+  ]
+}
+```
+
 ## Examples
 
-#### Adding Rollup plugin
+#### Adding a one-off Rollup plugin
+
+```javascript
+import alias from '@rollup/plugin-alias'
+
+export default {
+  hooks: [
+    {
+      event: 'config',
+      action: (app, params, ctx) => {
+        app.config.rollup.plugins.push(
+          alias({
+            entries: [
+              { find: 'utils', replacement: '../../../utils' },
+              { find: 'batman-1.0.0', replacement: './joker-1.5.0' },
+            ]
+          })
+        )
+      }
+    }
+  ]
+}
+```
+
+#### Adding a shared Rollup plugin
 
 ```javascript
 import alias from '@rollup/plugin-alias'
@@ -63,6 +114,7 @@ export default {
       event: 'config',
       action: (app, params, ctx) => {
         const rollup = {
+          plugins: [],
           plugins$map: { alias },
           plugins$options: {
             alias: {

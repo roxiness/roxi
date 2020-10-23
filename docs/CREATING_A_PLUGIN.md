@@ -1,3 +1,5 @@
+## Basics
+
 ### Call a function at the end of the app lifecycle
 
 ```javascript
@@ -29,7 +31,9 @@ export default {
 }
 ```
 
-#### Merging config
+## Concepts
+
+#### Config Merging
 
 Merging configs, recursively assigns object & array entries to the app object.
 
@@ -52,7 +56,7 @@ export default {
 }
 ```
 
-#### Shared config
+#### Config sharing
 Shared configs are configs where parsing has been delayed till the bundle event. The parser is added to `<config>$map` and the options to `<config>$options`.
 
 Using a shared config provides access to the same set of options across multiple plugins.
